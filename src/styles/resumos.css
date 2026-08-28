@@ -1,0 +1,124 @@
+.celular-resumos{
+    background: #f3f3f3;
+    padding: 18px;
+    position: relative;
+
+}
+
+.conteudo{
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 80px;
+}
+
+h1{
+    font-size: 16px;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 12px;
+}
+
+.resumos{
+    margin-top: 20px;
+}
+
+.cards{
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+}
+
+.card{
+    min-width: 105px;
+    background: #efefef;
+    border: 1px solid #9c9c9c;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-top{
+    padding: 8px;
+}
+
+.card h2{
+    font-size: 10px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.card h3{
+    font-size: 8px;
+    color: #7c7c7c;
+    margin-bottom: 4px;
+}
+
+.card p{
+    font-size: 8px;
+    color: #7c7c7c;
+}
+
+.categoria{
+    display: inline-block;
+    margin-top: 8px;
+    background: #dfe2ff;
+    color: #5865f2;
+    font-size: 7px;
+    font-weight: 500;
+    padding: 3px 6px;
+    border-radius: 3px;
+}
+
+.card-bottom{
+    border-top: 1px solid #9c9c9c;
+    padding: 6px 8px;
+}
+
+.materias{
+    margin-top: 28px;
+}
+
+.materias-cards{
+    display: flex;
+    gap: 15px;
+}
+
+.materia-card{
+    width: 88px;
+    height: 70px;
+    background: #afb4ff;
+    border-radius: 6px;
+    padding: 8px;
+    color: #4a53c7;
+    font-size: 8px;
+    font-weight: 500;
+}
+
+.bottom-bar{
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+    height: 42px;
+    background: #c1c5ff;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 8px;
+    color: #444;
+    text-decoration: none;
+}
+
+.nav-item span{
+    font-size: 12px;
+}
+
+.active{
+    color: white;
+}

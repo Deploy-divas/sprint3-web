@@ -1,0 +1,117 @@
+.celular-resumo-gerado{
+    background: #f3f3f3;
+    padding: 18px;
+}
+
+.card-resumo{
+    background: #efefef;
+    border-radius: 14px;
+    padding: 14px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    font-size: 24px;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.tags{
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.tag{
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+}
+
+.tag-green{
+    border: 1px solid #32b44a;
+    color: #32b44a;
+    background: #f4fff5;
+}
+
+.tag-blue{
+    border: 1px solid #4784ff;
+    color: #4784ff;
+    background: #f4f8ff;
+}
+
+.close{
+    font-size: 12px;
+}
+
+.texto{
+    flex: 1;
+    background: #f7f7f7;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    padding: 12px;
+    color: #b1b1b1;
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-y: auto;
+}
+
+.texto p{
+    margin-bottom: 10px;
+}
+
+.texto ul{
+    padding-left: 18px;
+}
+
+.texto li{
+    margin-bottom: 8px;
+}
+
+.botoes{
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.btn-secundario{
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #5865f2;
+    background: transparent;
+    color: #5865f2;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-primario{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: #5865f2;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-secundario:hover,
+.btn-primario:hover{
+    transform: scale(1.02);
+}
