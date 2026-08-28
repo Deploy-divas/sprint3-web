@@ -1,4 +1,4 @@
-function ResumoCard({ titulo, descricao, categoria, data }) {
+function ResumoCard({ titulo, descricao, categoria, data, tempoLeitura }) {
 
     return (
         <div className="card">
@@ -6,8 +6,9 @@ function ResumoCard({ titulo, descricao, categoria, data }) {
             <div className="card-top">
 
                 <h2>{titulo}</h2>
-
-                <p>{descricao}</p>
+                <h3>
+                    {tempoLeitura}{" "} {tempoLeitura === 1 ? "minuto" : "minutos"}
+                </h3>
 
                 <span className="categoria">
                     {categoria}
