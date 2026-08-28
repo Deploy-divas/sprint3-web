@@ -27,42 +27,42 @@ const Camera = () => {
 
     return (
 
-        <Celular>
+        <Celular className="celular-camera">
 
             <header className="camera-topbar">
 
                 <img
-                    src="/assets/icons/google-lens.svg"
+                    src="/imgs/icons/google-lens.svg"
                     alt="Google Lens"
                     className="icon-small"
                     />
 
                 <img
-                    src="/assets/icons/flash.svg"
+                    src="/imgs/icons/flash.svg"
                     alt="Flash"
                     className="icon-small"
                     />
 
                 <img
-                    src="/assets/icons/live-photo.svg"
+                    src="/imgs/icons/live-photo.svg"
                     alt="Live"
                     className="icon-small"
                 />
 
                 <img
-                    src="/assets/icons/zeiss-icon.png"
+                    src="/imgs/icons/zeiss-icon.png"
                     alt="ZEISS"
                     className="icon-zeiss"
                     />
 
                 <img
-                    src="/assets/icons/macro.svg"
+                    src="/imgs/icons/macro.svg"
                     alt="Macro"
                     className="icon-small"
                 />
 
                 <img
-                    src="/assets/icons/setting.svg"
+                    src="/imgs/icons/setting.svg"
                     alt="Configurações"
                     className="icon-small"
                     />
@@ -104,7 +104,7 @@ const Camera = () => {
                 <div className="camera-controls">
 
                     <img
-                        src="/assets/images/foto-gato.png"
+                        src="/imgs/images/foto-gato.png"
                         alt="Galeria"
                         className="galeria"
                         />
@@ -119,7 +119,7 @@ const Camera = () => {
                         onClick={virarCamera}
                     >
                         <img
-                            src="/assets/icons/rotate.svg"
+                            src="/imgs/icons/rotate.svg"
                             alt="Virar câmera"
                         />
                     </button>

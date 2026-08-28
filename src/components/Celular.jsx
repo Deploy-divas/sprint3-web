@@ -1,7 +1,9 @@
-function Celular({ children }) {
+import "../styles/celular.css";
+
+function Celular({ children, className = "" }) {
     return (
         <div className="phone">
-            <div className="screen">
+            <div className={`screen ${className}`}>
                 {children}
             </div>
         </div>
