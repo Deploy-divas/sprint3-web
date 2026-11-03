@@ -75,7 +75,7 @@ function HeaderSite() {
           </ul>
 
           <img
-            src="/src/assets/logo.png"
+            src="./src/assets/logo.png"
             alt="Logo JOVI"
             className="my-2 w-[100px]"
           />

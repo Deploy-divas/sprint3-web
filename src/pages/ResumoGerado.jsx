@@ -5,18 +5,21 @@ import { Link } from "react-router-dom";
 
 import "../styles/resumoGerado.css";
 
-import { salvarResumo } from "../services/resumosApi";
+import useSalvarResumo from "../hooks/useSalvarResumo";
+
 import { useNavigate } from "react-router-dom";
 
-const ResumoGerado = () => {
 
+const ResumoGerado = () => {
+  
   // Referência para pegar todo o conteúdo da div .texto
   const textoRef = useRef(null);
-
+  
   const navigate = useNavigate();
 
-  // Função para salvar o resumo na api
-  const salvar = async () => {
+  
+  const { salvar, salvando, erro } = useSalvarResumo();
+  const criarResumo  = async () => {
     if (!textoRef.current) return;
 
     const novoResumo = {
@@ -26,9 +29,11 @@ const ResumoGerado = () => {
       data: new Date().toLocaleDateString("pt-BR")
     };
 
-    await salvarResumo(novoResumo);
+    const sucesso = await salvar(novoResumo);
 
-    navigate("/resumos");
+    if (sucesso) {
+        navigate("/resumos");
+    }
   };
 
   return (
@@ -88,11 +93,14 @@ const ResumoGerado = () => {
           </Link>
 
           <button
-            className="btn-primario"
-            onClick={salvar}
+              className="btn-primario"
+              onClick={criarResumo}
+              disabled={salvando}
           >
-            Criar Resumo
+              {salvando ? "Salvando..." : "Criar Resumo"}
           </button>
+
+          {erro && <p>{erro}</p>}
 
         </div>
 

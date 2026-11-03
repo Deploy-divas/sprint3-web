@@ -2,27 +2,19 @@ import Celular from "../components/Celular";
 import ResumoCard from "../components/ResumoCard";
 import MateriaCard from "../components/MateriaCard";
 
-import {buscarResumos} from "../services/resumosApi";
+import useResumos from "../hooks/useResumos";
 
-import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "../styles/resumos.css";
 
 const Resumos = () => {
 
-  // Guarda o resumo que veio da api
-  const [resumos, setResumos] = useState([]);
 
   // Executa quando a página Resumos abrir
-  useEffect(() => {
-    async function carregarResumos() {
-        const dados = await buscarResumos();
-        setResumos(dados);
-    }
+  const { resumos, carregando, erro } = useResumos();
 
-    carregarResumos();
-  }, []);
+
 
   function calcularTempoLeitura(html) {
 
@@ -70,7 +62,12 @@ const Resumos = () => {
         <h1>Resumos gerados</h1>
 
         <div className="cards">
-          {resumos.map((resumo) => (
+
+          {carregando && <p>Carregando resumos...</p>}
+
+          {erro && <p>{erro}</p>}
+
+          {!carregando && !erro && resumos.map((resumo) => (
             <ResumoCard
               key={resumo.id}
               titulo={resumo.titulo}
