@@ -5,19 +5,30 @@ import { Link } from "react-router-dom";
 
 import "../styles/resumoGerado.css";
 
+import { salvarResumo } from "../services/resumosApi";
+import { useNavigate } from "react-router-dom";
+
 const ResumoGerado = () => {
 
   // Referência para pegar todo o conteúdo da div .texto
   const textoRef = useRef(null);
 
-  // Função para salvar o resumo no LocalStorage
-  const salvarResumo = () => {
-    if (textoRef.current) {
-      localStorage.setItem(
-        "resumo",
-        textoRef.current.innerHTML
-      );
-    }
+  const navigate = useNavigate();
+
+  // Função para salvar o resumo na api
+  const salvar = async () => {
+    if (!textoRef.current) return;
+
+    const novoResumo = {
+      titulo: "Ecologia",
+      categoria: "Biologia",
+      conteudo: textoRef.current.innerHTML,
+      data: new Date().toLocaleDateString("pt-BR")
+    };
+
+    await salvarResumo(novoResumo);
+
+    navigate("/resumos");
   };
 
   return (
@@ -76,13 +87,12 @@ const ResumoGerado = () => {
             Gerar novamente
           </Link>
 
-          <Link
-            to="/resumos"
+          <button
             className="btn-primario"
-            onClick={salvarResumo}
+            onClick={salvar}
           >
             Criar Resumo
-          </Link>
+          </button>
 
         </div>
 

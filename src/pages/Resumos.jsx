@@ -2,6 +2,8 @@ import Celular from "../components/Celular";
 import ResumoCard from "../components/ResumoCard";
 import MateriaCard from "../components/MateriaCard";
 
+import {buscarResumos} from "../services/resumosApi";
+
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -9,18 +11,17 @@ import "../styles/resumos.css";
 
 const Resumos = () => {
 
-  // Guarda o resumo que veio do LocalStorage
-  const [resumo, setResumo] = useState("");
+  // Guarda o resumo que veio da api
+  const [resumos, setResumos] = useState([]);
 
   // Executa quando a página Resumos abrir
   useEffect(() => {
-
-    const resumoSalvo = localStorage.getItem("resumo");
-
-    if (resumoSalvo) {
-      setResumo(resumoSalvo);
+    async function carregarResumos() {
+        const dados = await buscarResumos();
+        setResumos(dados);
     }
 
+    carregarResumos();
   }, []);
 
   function calcularTempoLeitura(html) {
@@ -69,26 +70,16 @@ const Resumos = () => {
         <h1>Resumos gerados</h1>
 
         <div className="cards">
-
-          {resumo && (
+          {resumos.map((resumo) => (
             <ResumoCard
-              titulo="Ecologia"
-              categoria="Biologia"
-              data={new Date().toLocaleDateString("pt-BR")}
-              tempoLeitura={calcularTempoLeitura(resumo)}
-              descricao={pegarPrimeirasPalavras(resumo, 20)}
-
+              key={resumo.id}
+              titulo={resumo.titulo}
+              categoria={resumo.categoria}
+              data={resumo.data}
+              tempoLeitura={calcularTempoLeitura(resumo.conteudo)}
+              descricao={pegarPrimeirasPalavras(resumo.conteudo, 20)}
             />
-          )}
-
-          {/* resumo ilustrativo */}
-          <ResumoCard
-            titulo="Cadeia alimentar"
-            descricao="Produtores, consumidores e decompositores no ecossistema."
-            categoria="Ciências"
-            data="14/05/2026"
-            tempoLeitura="2"
-          />
+          ))}
 
         </div>
 

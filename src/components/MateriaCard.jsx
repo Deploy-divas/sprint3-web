@@ -1,7 +1,7 @@
 function MateriaCard({ materia }) {
 
     return (
-        <div class="materia-card">
+        <div className="materia-card">
             <span>{materia}</span>
         </div>
     );
