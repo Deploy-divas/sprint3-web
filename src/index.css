@@ -1,14 +1,32 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import "tailwindcss";
+
+@theme {
+    --color-azul-escuro: #06103b;
+    --color-azul: #1e46e7;
+    --color-cinza-claro: #71717a;
+    --color-cinza: #353535;
+
 }
 
-body{
-    background: #ececec;
-    font-family: "Roboto", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+
+#solucao {
+    scroll-margin-top: 100px;
+}
+#publico {
+    scroll-margin-top: 100px;
+}
+#galeria {
+    scroll-margin-top: 80px;
+}
+#equipe {
+    scroll-margin-top: 100px;
+}
+#contato {
+    scroll-margin-top: 80px;
+}
+
+.titulo-principal{
+    color: transparent;
+    -webkit-text-stroke: 2px #fff;
+    font-size: 5rem;
 }

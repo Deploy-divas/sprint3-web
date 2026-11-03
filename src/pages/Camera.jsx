@@ -27,7 +27,7 @@ const Camera = () => {
 
     return (
 
-        <Celular className="celular-camera">
+        <Celular className="celular-camera mx-auto">
 
             <header className="camera-topbar">
 

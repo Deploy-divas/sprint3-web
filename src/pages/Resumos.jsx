@@ -115,7 +115,7 @@ const Resumos = () => {
       <nav className="bottom-bar">
 
         <Link
-          to="/"
+          to="/camera"
           className="nav-item"
         >
           <span>📷</span>

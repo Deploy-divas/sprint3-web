@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
+import LandingPage from "./pages/LandingPage";
 import Camera from "./pages/Camera";
 import TextoReconhecido from "./pages/TextoReconhecido";
 import ResumoGerado from "./pages/ResumoGerado";
@@ -12,7 +13,8 @@ function App() {
         <BrowserRouter>
         
             <Routes>
-                <Route path="/" element={<Camera />} />
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/camera" element={<Camera />} />
                 <Route path="/texto-reconhecido"element={<TextoReconhecido />} />
                 <Route path="/resumo-gerado" element={<ResumoGerado />} />
                 <Route path="/resumos" element={<Resumos />} />
